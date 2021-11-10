@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BlogSystem.Logic;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,37 +8,47 @@ using System.Threading.Tasks;
 
 namespace BlogSystem.Endpoint.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class BlogController : ControllerBase
     {
-        // GET: api/<BlogController>
+
+        IBlogLogic blogLogic;
+
+        public BlogController(IBlogLogic blogLogic)
+        {
+            this.blogLogic = blogLogic;
+        }
+
+
+
+        // GET: /blog
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<BlogController>/5
+        // GET /blog/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/<BlogController>
+        // POST /blog
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/<BlogController>/5
+        // PUT /blog
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/<BlogController>/5
+        // DELETE /blog/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
