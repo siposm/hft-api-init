@@ -24,6 +24,17 @@ namespace BlogSystem.Client
     {
         static void Main(string[] args)
         {
+            // ******************************************************
+            //
+            //      Vastagkliens módszerrel lepéldányosítunk mindent
+            //
+            // ******************************************************
+
+            // Helyette: a kliensünk egy frontend alkalmazás szerepét veszi fel
+            // és az API réteggel fog kommunikálni
+
+            // Ehhez a kliens csak a Models réteget ismeri majd, mást nem.
+
             BlogContext blogCtx = new BlogContext();
             BlogRepository blogRepo = new BlogRepository(blogCtx);
             
