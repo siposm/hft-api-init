@@ -33,7 +33,7 @@
 - Startup.cs --> ConfigureServices update
 
 - Create Controllers folder in Endpoint
-- Add controllers
+- Add controllers for Blog and Comment
 	- API --> API with read/write
 	- update main route
 	- add ctor with interface reference
@@ -51,7 +51,8 @@
 - Test from Postman (POST, PUT, DELETE)
     - GetAll
     - GetById
-    - POST -> body -> raw -> json (create new blog with title)
+    - POST -> body -> raw -> json (create new blog with title --> see result 200 HTTP status code)
+	- POST -> body -> raw -> json (create new comment with content ONLY --> exception --> continue --> see postman result, add BlogId --> see status code)
 
 - Client --> add nuget WebApi.Client
 
@@ -61,4 +62,3 @@
     - Thread.sleep in client
      
 - Test through RestService calls
-
