@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogSystem.Tests", "BlogSys
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogSystem.Client", "BlogSystem.Client\BlogSystem.Client.csproj", "{58B37DC5-2BB3-4F56-BA9B-CF87588EFDCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogSystem.Endpoint", "BlogSystem.Endpoint\BlogSystem.Endpoint.csproj", "{51BC6100-A5F4-426F-9ACE-EAFAD920AE5A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,10 +39,6 @@ Global
 		{58B37DC5-2BB3-4F56-BA9B-CF87588EFDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58B37DC5-2BB3-4F56-BA9B-CF87588EFDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58B37DC5-2BB3-4F56-BA9B-CF87588EFDCB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51BC6100-A5F4-426F-9ACE-EAFAD920AE5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51BC6100-A5F4-426F-9ACE-EAFAD920AE5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51BC6100-A5F4-426F-9ACE-EAFAD920AE5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51BC6100-A5F4-426F-9ACE-EAFAD920AE5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -48,7 +48,6 @@ namespace BlogSystem.Data
         public string MainData => $"[{BlogId}] : {Title} : {Category} (likes: {LikesCount}) (comments: {Comments.Count()})";
 
         [NotMapped]
-        [JsonIgnore]
         public virtual ICollection<Comment> Comments { get; set; }
 
         public Blog()

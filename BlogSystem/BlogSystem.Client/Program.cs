@@ -47,21 +47,61 @@ namespace BlogSystem.Client
              */
 
 
+            /*
+             * 
+             * Steps:
+             * 
+             * delete project references from client except for Data layer/project (or if there is dedicated Models project)
+             *
+             * sln add new project
+             *      BlogSystem.Endpoint
+             *      ASP.NET Core Empty Project!!!
+             *      ASP.NET Core 5.0
+             *      HTTPS not needed
+             *      
+             * set as startup the Endpoint project
+             * run, check if browser opens (launchsettings.json --> localhost:0123)
+             * set chrome as default browser for IIS
+             * 
+             * add references to Endpoint layer (Data + Repo + Logic)
+             * 
+             * Startup.cs --> UseEndpoints update
+             * Startup.cs --> ConfigureServices update
+             * 
+             * Create Controllers folder in Endpoint
+             * Add controllers
+             *      API --> API with read/write
+             *      update main route
+             *      add ctor with interface reference
+             *      update http method routes
+             *      
+             * launchSettings.json --> launchUrl --> set default url
+             * 
+             * add IoC --> startup.cs --> add transients
+             * 
+             * JSON serialization problem --> JsonIgnore
+             * 
+             * nonCrud --> statController --> main route update []/[action]
+             * 
+             * Test from browser (GET)
+             * Test from Postman (POST, PUT, DELETE)
+             *      GetAll
+             *      GetById
+             *      POST -> body -> raw -> json
+             * 
+             * Client --> add nuget WebApi.Client
+             * 
+             * RestService --> similar to JS Fetch API
+             * 
+             * Sln -> properties -> multiple startup project (client + endpoint)
+             *      Thread.sleep in client
+             *      
+             * Test through RestService calls
+             * 
+             */
 
-            Thread.Sleep(8000); // endpoint needs more time to start, we must wait for that
 
-            RestService rserv = new RestService("http://localhost:42773"); // from launchSettings.json
-
-            rserv.Post<Blog>(new Blog()
-            {
-                Title = "--MY-SECOND-NEW-BLOG--"
-            }, "blog");
-
-            var blogs = rserv.Get<Blog>("blog");
-
-            var x = rserv.GetSingle<CategoryAndCount>("stat/GetLeastUsedCategory");
-
-            ;
+            // TODO test RestService from here
 
 
 
