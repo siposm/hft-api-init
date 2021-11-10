@@ -14,6 +14,7 @@ namespace BlogSystem.Endpoint
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers(); // enable controllers
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
