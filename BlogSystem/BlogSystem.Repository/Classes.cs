@@ -29,10 +29,10 @@ namespace BlogSystem.Repository
     {
         public BlogRepository(DbContext ctx) : base(ctx) { /* ... */ }
 
-        public void AddNewBlog(Blog newBlog)
+        public void AddNewBlog(Blog blog)
         {
             //(ctx as BlogContext).Add(...)
-            ctx.Add(newBlog);
+            ctx.Add(blog);
             ctx.SaveChanges();
         }
 
@@ -43,9 +43,27 @@ namespace BlogSystem.Repository
             ctx.SaveChanges();
         }
 
+        public void DeleteBlogById(int id)
+        {
+            var toDelete = GetOne(id);
+            ctx.Remove(toDelete);
+            ctx.SaveChanges();
+        }
+
         public override Blog GetOne(int id)
         {
             return GetAll().SingleOrDefault(x => x.BlogId == id);
+        }
+
+        public void UpdateBlog(Blog blog)
+        {
+            var toUpdate = GetOne(blog.BlogId);
+
+            toUpdate.Category = blog.Category;
+            toUpdate.Title = blog.Title;
+            // etc. for additional properties
+
+            ctx.SaveChanges();
         }
     }
 

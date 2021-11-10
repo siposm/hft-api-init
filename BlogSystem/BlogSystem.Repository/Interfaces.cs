@@ -16,7 +16,9 @@ namespace BlogSystem.Repository
     public interface IBlogRepository : IRepository<Blog>
     {
         void ChangeTitle(int id, string newTitle);
-        void AddNewBlog(Blog newBlog);
+        void AddNewBlog(Blog blog);
+        void UpdateBlog(Blog blog);
+        void DeleteBlogById(int id);
     }
 
     public interface ICommentRepository : IRepository<Comment>

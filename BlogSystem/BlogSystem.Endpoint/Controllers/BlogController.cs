@@ -45,16 +45,17 @@ namespace BlogSystem.Endpoint.Controllers
         }
 
         // PUT /blog
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public void Put([FromBody] Blog value)
         {
+            blogLogic.UpdateBlog(value);
         }
 
         // DELETE /blog/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-
+            blogLogic.DeleteBlog(id);
         }
     }
 }
