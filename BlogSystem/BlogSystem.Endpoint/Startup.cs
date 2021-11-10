@@ -1,6 +1,10 @@
+using BlogSystem.Data;
+using BlogSystem.Logic;
+using BlogSystem.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -15,6 +19,14 @@ namespace BlogSystem.Endpoint
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers(); // enable controllers
+
+            services.AddTransient<IBlogLogic, BlogLogic>();
+            services.AddTransient<ICommentLogic, CommentLogic>();
+
+            services.AddTransient<IBlogRepository, BlogRepository>();
+            services.AddTransient<ICommentRepository, CommentRepository>();
+            
+            services.AddTransient<DbContext, BlogContext>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -36,7 +48,7 @@ namespace BlogSystem.Endpoint
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers(); // localhost:xxx/ALMA --> ALMA kontrollerhez fordul
+                endpoints.MapControllers(); // localhost:0123/ALMA --> ALMA kontrollerhez fordul
             });
         }
     }

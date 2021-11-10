@@ -14,6 +14,7 @@ namespace BlogSystem.Logic
         Blog GetBlogById(int id);
         void ChangeBlogTitle(int id, string newTitle);
         IList<Blog> GetAllBlogs();
+        bool AddNewBlog(Blog blog);
     }
 
 
@@ -104,6 +105,13 @@ namespace BlogSystem.Logic
                     select x.Blog;
 
             return q.ToList();
+        }
+
+        public bool AddNewBlog(Blog blog)
+        {
+            blogRepo.AddNewBlog(blog);
+            return true;
+            // TODO check somehow if insertion was successful!
         }
     }
 }

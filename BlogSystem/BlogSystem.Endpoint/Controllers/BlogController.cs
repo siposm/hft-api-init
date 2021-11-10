@@ -1,4 +1,5 @@
-﻿using BlogSystem.Logic;
+﻿using BlogSystem.Data;
+using BlogSystem.Logic;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -24,22 +25,23 @@ namespace BlogSystem.Endpoint.Controllers
 
         // GET: /blog
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Blog> Get()
         {
-            return new string[] { "value1", "value2" };
+            return blogLogic.GetAllBlogs();
         }
 
         // GET /blog/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Blog Get(int id)
         {
-            return "value";
+            return blogLogic.GetBlogById(id);
         }
 
         // POST /blog
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Blog value)
         {
+            blogLogic.AddNewBlog(value);
         }
 
         // PUT /blog
@@ -52,6 +54,7 @@ namespace BlogSystem.Endpoint.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+
         }
     }
 }

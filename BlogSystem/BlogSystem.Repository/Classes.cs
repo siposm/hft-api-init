@@ -29,6 +29,13 @@ namespace BlogSystem.Repository
     {
         public BlogRepository(DbContext ctx) : base(ctx) { /* ... */ }
 
+        public void AddNewBlog(Blog newBlog)
+        {
+            //(ctx as BlogContext).Add(...)
+            ctx.Add(newBlog);
+            ctx.SaveChanges();
+        }
+
         public void ChangeTitle(int id, string newTitle)
         {
             var blog = GetOne(id);
