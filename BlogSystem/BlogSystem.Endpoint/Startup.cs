@@ -20,6 +20,7 @@ namespace BlogSystem.Endpoint
         {
             services.AddControllers(); // enable controllers
 
+            // IoC
             services.AddTransient<IBlogLogic, BlogLogic>();
             services.AddTransient<ICommentLogic, CommentLogic>();
 
@@ -37,14 +38,6 @@ namespace BlogSystem.Endpoint
             }
 
             app.UseRouting();
-
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapGet("/", async context =>
-            //    {
-            //        await context.Response.WriteAsync("Hello World!");
-            //    });
-            //});
 
             app.UseEndpoints(endpoints =>
             {

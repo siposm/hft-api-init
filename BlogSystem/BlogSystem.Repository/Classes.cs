@@ -31,7 +31,6 @@ namespace BlogSystem.Repository
 
         public void AddNewBlog(Blog blog)
         {
-            //(ctx as BlogContext).Add(...)
             ctx.Add(blog);
             ctx.SaveChanges();
         }

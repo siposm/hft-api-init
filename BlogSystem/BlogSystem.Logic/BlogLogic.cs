@@ -14,7 +14,7 @@ namespace BlogSystem.Logic
         Blog GetBlogById(int id);
         void ChangeBlogTitle(int id, string newTitle);
         IList<Blog> GetAllBlogs();
-        bool AddNewBlog(Blog blog);
+        void AddNewBlog(Blog blog);
         void UpdateBlog(Blog blog);
         void DeleteBlog(int id);
 
@@ -115,11 +115,9 @@ namespace BlogSystem.Logic
             return q.ToList();
         }
 
-        public bool AddNewBlog(Blog blog)
+        public void AddNewBlog(Blog blog)
         {
             blogRepo.AddNewBlog(blog);
-            return true;
-            // TODO check somehow if insertion was successful!
         }
 
         public void UpdateBlog(Blog blog)
