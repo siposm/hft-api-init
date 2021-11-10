@@ -17,13 +17,13 @@
 
 - delete project references from client except for Data layer/project (or if there is dedicated Models project)
 
-- sln add new project
+- Sln -> add new project
 	- BlogSystem.Endpoint
 	- ASP.NET Core Empty Project!!!
 	- ASP.NET Core 5.0
 	- HTTPS not needed
      
-- set as startup the Endpoint project
+- set the Endpoint project as startup
 - run, check if browser opens (launchsettings.json --> localhost:0123)
 - set chrome as default browser for IIS
 
@@ -51,7 +51,7 @@
 - Test from Postman (POST, PUT, DELETE)
     - GetAll
     - GetById
-    - POST -> body -> raw -> json
+    - POST -> body -> raw -> json (create new blog with title)
 
 - Client --> add nuget WebApi.Client
 
