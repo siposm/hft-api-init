@@ -17,6 +17,12 @@ namespace BlogSystem.Logic
         bool AddNewBlog(Blog blog);
         void UpdateBlog(Blog blog);
         void DeleteBlog(int id);
+
+        IEnumerable<CommentNumberPerCategory> GetCommentNumberPerCategory();
+        double? AverageLikesCount();
+        CategoryAndCount GetLeastUsedCategory();
+        IList<Blog> GetBlogsWithRudeComments();
+
     }
 
 
